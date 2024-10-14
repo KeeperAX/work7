@@ -14,7 +14,7 @@ void multiplimtrix(int matrix1[row_matrix1][column_matrix1], int matrix2[row_mat
         for (int j = 0; j < column_matrix2; j++) {
             rslt[i][j] = 0;
 
-            for (int k = 0; k < column_matrix1; k++) { // Изменено на column_matrix1
+            for (int k = 0; k < column_matrix1; k++) { 
                 rslt[i][j] += matrix1[i][k] * matrix2[k][j];
             }
 
@@ -25,7 +25,7 @@ void multiplimtrix(int matrix1[row_matrix1][column_matrix1], int matrix2[row_mat
     system("pause");
 }
 
-bool check_matrix(int matrix1[row_matrix1][column_matrix1], int matrix2[row_matrix2][column_matrix2]) {
+bool check_matrix(int column_matrix1, int row_matrix2) {
     return (column_matrix1 == row_matrix2); // Проверка на возможность умножения
 }
 
@@ -51,7 +51,7 @@ int work71() {
 
     addnums(matrix_one, matrix_two);
 
-    if (check_matrix(matrix_one, matrix_two)) {
+    if (check_matrix(column_matrix1, row_matrix2)) {
         multiplimtrix(matrix_one, matrix_two);
     }
     else {
